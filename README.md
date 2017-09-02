@@ -1,12 +1,21 @@
 # Android-Neo
 ### Fazer o seu celular Android sair da "matrix".
 
-### Introduçao
-#### Pre-Requisitos
+### 1. Introduçao
+Quando voce compra um celular de operadoras, ele costuma vir com alguns apps que voce nao consegue desinstalar. No meu caso tenho um celular VIVO e quero arrancar aqueles apps que vem pre-instalados sem meu concentimento, afinal sou do mundo UNIX e gosto de controlar minha Vida e meu software.
+#### 1.1 Pre-Requisitos
 *- Ter o root instaldo no telefone
 *- Ter um bom servidor de SSH no telefone (SSHelper)
 
+### 2. Desinstalando as propagandas e apps da VIVO
 Acesso o telefone via SSH
+
+Acesse o root:
+```bash
+su
+```
+
+Primeiro voce deve saber quais sao os softwares instalados da vivo em seu celular. Liste todos os softwares e mande o celular o linux (sim seu Android eh um Linux) do seu telefone mostrar tudo que tem 'vivo' na composiçao de seu nome. Use a ferramenta 'pm' (Package Manager) que vem no Android para fazer estas alteraçoes:
 ```bash
 pm list  packages -l |grep vivo
 ```
