@@ -4,8 +4,8 @@
 ### 1. Introduçao
 Quando voce compra um celular de operadoras, ele costuma vir com alguns apps que voce nao consegue desinstalar. No meu caso tenho um celular VIVO e quero arrancar aqueles apps que vem pre-instalados sem meu concentimento, afinal sou do mundo UNIX e gosto de controlar minha Vida e meu software.
 #### 1.1 Pre-Requisitos
-*- Ter o root instaldo no telefone
-*- Ter um bom servidor de SSH no telefone (SSHelper)
+* - Ter o root instaldo no telefone
+* - Ter um bom servidor de SSH no telefone (SSHelper)
 
 ### 2. Desinstalando as propagandas e apps da VIVO
 Acesso o telefone via SSH
