@@ -1,9 +1,10 @@
-# android-neo
-###Fazer o seu celular Android sair da "matrix".
+# Android-Neo
+### Fazer o seu celular Android sair da "matrix".
 
-
-Ter o root instaldo no telefone
-Ter um bom servidor de SSH no telefone (SSHelper)
+### Introduçao
+#### Pre-Requisitos
+*- Ter o root instaldo no telefone
+*- Ter um bom servidor de SSH no telefone (SSHelper)
 
 Acesso o telefone via SSH
 ```bash
