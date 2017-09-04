@@ -1051,4 +1051,19 @@ rm -r KnoxSetupWizardClient
 rm -r UniversalMDMClient
 rm -r KnoxSwitcher
 ```
+# Fritando o Samsung Pay
 
+```bash
+su 
+mount -o remount,rw /system
+cd /data/app
+pm list packages -f |grep samsung |grep pay
+# package:/data/app/com.samsung.android.spayfw-2/base.apk=com.samsung.android.spayfw
+# package:/data/app/com.samsung.android.spay-2/base.apk=com.samsung.android.spay
+# pode ate tentar desinstalar amigavelmente
+pm uninstall com.samsung.android.spayfw-2
+# Failure [DELETE_FAILED_INTERNAL_ERROR]
+# Eh... precisa de um pouco mais de jeito, pegada forte
+rm -r com.samsung.android.spayfw-2
+rm -r com.samsung.android.spay-2
+```
