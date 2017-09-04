@@ -987,3 +987,43 @@ cd /system/priv-app
 rm -r intelligenceservice                                                               
 rm -r intelligenceservice2 
 ```
+# Fritando aplicaçoes Microsoft
+
+```bash
+su
+cd /system/priv-app
+
+pm list packages -f |grep microsoft
+# package:/data/app/com.microsoft.office.excel-1/base.apk=com.microsoft.office.excel
+# package:/data/app/com.microsoft.skydrive-1/base.apk=com.microsoft.skydrive
+# package:/data/app/com.microsoft.rdc.android-2/base.apk=com.microsoft.rdc.android
+# package:/system/app/OneNote/OneNote.apk=com.microsoft.office.onenote
+# package:/system/priv-app/Word_SamsungStub/Word_SamsungStub.apk=com.microsoft.office.word
+# package:/system/priv-app/PowerPoint_SamsungStub/PowerPoint_SamsungStub.apk=com.microsoft.office.powerpoint
+```
+Procure inicialmente desinstalar amigavelmente o WORD e o PowerPoint:
+```bash
+pm uninstall com.microsoft.office.excel-1
+# Failure [DELETE_FAILED_INTERNAL_ERROR]
+pm uninstall com.microsoft.office.onenote                                               
+# Failure [DELETE_FAILED_INTERNAL_ERROR]
+```
+Se nao deu, ou seja, [DELETE_FAILED_INTERNAL_ERROR] , use seus poderes Linux:
+```bash
+cd /system/priv-app
+mount -o remount,rw /system
+rm -r Word_SamsungStub 
+rm -r PowerPoint_SamsungStub
+cd /system/app
+rm -r OneNote
+cd /data/app
+rm -r com.microsoft.office.excel-1
+```
+# Fritando a nuvem do jornaleiro, app da globo.com
+```bash
+pm list packages -f |grep jornal
+# package:/data/app/br.com.golmobile.nuvemjornaleiro.activity-2/base.apk=br.com.golmobile.nuvemjornaleiro.activity
+cd /data/app/
+rm -r br.com.golmobile.nuvemjornaleiro.activity-2
+```
+
