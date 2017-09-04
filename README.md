@@ -77,16 +77,8 @@ rm -r downloadsvivo-1-7-1-0
 
 # Fritando pacotes de coleta de informaçoes da SAMSUNG
 
-```bash
-su
-cd /system/priv-app
-root@universal7420:/system/priv-app # pm uninstall intelligenceservice
-#Failure [DELETE_FAILED_INTERNAL_ERROR]
-root@universal7420:/system/priv-app # pm uninstall intelligenceservice2
-#Failure [DELETE_FAILED_INTERNAL_ERROR]
-```
-
-De uma olhada no log do serviço 'usagestats' e conclua se a SAMSUNG tem boas intençoes com o usuario.
+Claro, voce ja deve suspeitar, seu smartphone coleta informaçoes de uso e encaminha para terceiros, no caso, SAMSUNG.
+Caso voce queira uma amostra do que ela coleta de uma olhada no log do serviço `usagestats` destes pacotes **intelligenceservice** e **intelligenceservice2** conclua se a SAMSUNG tem boas intençoes com o usuario.
 ```
   user=0 
     In-memory daily stats
@@ -968,11 +960,30 @@ De uma olhada no log do serviço 'usagestats' e conclua se a SAMSUNG tem boas in
         config=mcc724-mnc10-pt-rBR-ldltr-sw411dp-w411dp-h707dp-normal-long-notround-port-night-560dpi-finger-keysexposed-nokeys-navhidden-nonav-v23 totalTime="11:44:56" lastTime="03/09/2017 23:11" count=14 
         config=mcc724-mnc10-pt-rBR-ldltr-sw411dp-w411dp-h707dp-normal-long-notround-port-night-560dpi-finger-keysexposed-nokeys-navhidden-nonav-v23 totalTime="00:00" lastTime="03/09/2017 23:11" count=1 
         config=pt-rBR-ldltr-sw411dp-w411dp-h707dp-normal-long-notround-port-560dpi-finger-keysexposed-nokeys-navhidden-nonav-v23 totalTime="00:00" lastTime="01/09/2017 09:19" count=1 
-      events
-    
+      events    
 
 ```
 
+Agora, caso voce queira desinstalar estes serviços, amigavelmente, veja o que acontece:
 
+```bash
+su
+cd /system/priv-app
+root@universal7420:/system/priv-app # pm uninstall intelligenceservice
+#Failure [DELETE_FAILED_INTERNAL_ERROR]
+root@universal7420:/system/priv-app # pm uninstall intelligenceservice2
+#Failure [DELETE_FAILED_INTERNAL_ERROR]
+```
 
-
+Entao, nao resta outra opçao a nao ser apelar para ignorancia para os santos poderes do Linux do seu celular:
+```bash
+# Utilize o root
+su
+# Remonte a partiçao /system como permissao de escrita
+mount -o remount,rw /system
+# Entre no diretorio das aplicaçoes privadas
+cd /system/priv-app
+# decrete a execuçao sumaria dos serviços coleira-eletronica
+rm -r intelligenceservice                                                               
+rm -r intelligenceservice2 
+```
