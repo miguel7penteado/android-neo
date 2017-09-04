@@ -1026,4 +1026,29 @@ pm list packages -f |grep jornal
 cd /data/app/
 rm -r br.com.golmobile.nuvemjornaleiro.activity-2
 ```
+# Fritando o knox da samsung
+Nao quero nada externo controlando meu celular, impondo politicas de segurança corporativas, seguindo os moldes do Microsoft Active Directory. Por isso execuçao sumaria ao knox. Para mim ele eh como de cavalo de troia.
+
+```bash
+pm list packages -f |grep knox 
+
+#package:/system/app/RCPComponents/RCPComponents.apk=com.samsung.knox.rcp.components
+#package:/system/app/KnoxAttestationAgent/KnoxAttestationAgent.apk=com.sec.enterprise.knox.attestation
+#package:/system/app/KnoxFolderContainer/KnoxFolderContainer.apk=com.sec.knox.foldercontainer
+#package:/system/app/MyKNOXSetupWizard/MyKNOXSetupWizard.apk=com.sec.enterprise.knox.myknoxsetupwizard
+#package:/system/app/KnoxAppsUpdateAgent/KnoxAppsUpdateAgent.apk=com.samsung.knox.appsupdateagent
+#package:/system/app/KnoxSetupWizardClient/KnoxSetupWizardClient.apk=com.sec.knox.knoxsetupwizardclient
+#package:/system/app/UniversalMDMClient/UniversalMDMClient.apk=com.sec.enterprise.knox.cloudmdm.smdms
+#package:/system/app/KnoxSwitcher/KnoxSwitcher.apk=com.sec.knox.switcher
+
+cd /system/app
+rm -r RCPComponents
+rm -r KnoxAttestationAgent
+rm -r KnoxFolderContainer
+rm -r MyKNOXSetupWizard
+rm -r KnoxAppsUpdateAgent
+rm -r KnoxSetupWizardClient
+rm -r UniversalMDMClient
+rm -r KnoxSwitcher
+```
 
