@@ -53,6 +53,11 @@ pm list  packages -f |grep vivo
 ```
 
 ```bash
+pm uninstall -k --user 0 nome_do_pacote
+```
+
+
+```bash
 package:/system/priv-app/vivo_apps_club_v92/vivo_apps_club_v92.apk=br.com.bemobi.appsclub.vivo
 package:/data/app/br.com.m4u.recarga.vivo-2/base.apk=br.com.m4u.recarga.vivo
 package:/system/priv-app/downloadsvivo-1-7-1-0/downloadsvivo-1-7-1-0.apk=com.terra.appcreator.downloadsvivo
